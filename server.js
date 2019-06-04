@@ -13,10 +13,8 @@ const leaderboard = require('./controllers/leaderboard');
 const db = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
-        user: 'postgres',
-        password: 'Redskinsfan2@',
-        database: 'face-recog'
+        connectionString: process.env.DATABASE_URL,
+        ssl: true
     }
 });
 
